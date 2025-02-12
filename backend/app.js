@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 
 // Routes
 app.use("/user", userRoutes);
-app.use("/generate", generateRoutes);
+app.use("/generate-pptx", generateRoutes);
 app.use("/templates", templatesRoutes);
 
 // Start server

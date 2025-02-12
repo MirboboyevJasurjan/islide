@@ -31,7 +31,7 @@ Respond in JSON format like this:
     const response = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
       messages: [{ role: "user", content: prompt }],
-      max_tokens: 1000,
+      max_tokens: 500,
     });
 
     // Log raw response for debugging
