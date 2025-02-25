@@ -4,8 +4,7 @@ import { Configuration, OpenAIApi } from "openai";
 console.log("Using OpenAI API Key:", process.env.OPENAI_API_KEY);
 
 const configuration = new Configuration({
-  apiKey:
-    "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", // API key from .env file
+  apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 
@@ -43,9 +42,14 @@ Respond in JSON format like this:
     try {
       jsonResponse = JSON.parse(rawResponse);
     } catch (parseError) {
-      console.error("Failed to parse OpenAI response as JSON:", parseError.message);
+      console.error(
+        "Failed to parse OpenAI response as JSON:",
+        parseError.message
+      );
       console.error("Original Response:", rawResponse);
-      throw new Error("OpenAI returned invalid JSON. Please refine the prompt.");
+      throw new Error(
+        "OpenAI returned invalid JSON. Please refine the prompt."
+      );
     }
 
     // Return the parsed slides array
